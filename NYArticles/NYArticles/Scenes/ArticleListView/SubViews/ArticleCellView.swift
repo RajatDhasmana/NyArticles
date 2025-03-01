@@ -46,15 +46,21 @@ struct ArticleCellView: View {
 extension ArticleCellView {
     
     private func titleImageView(imageUrl: URL?) -> some View {
+        
         AsyncImage(url: imageUrl) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
+
         } placeholder: {
-            ProgressView()
+            
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .clipShape(Circle())
         }
-        .frame(width: 40, height: 40)
+        .frame(width: 40, height: 40)        
     }
     
     
