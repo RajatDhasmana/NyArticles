@@ -25,17 +25,12 @@ struct ArticleListView: View {
                 EmptyStateView(viewModel: emptyStateViewModel)
                 
             case .dataReceived(let articleList):
-                ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(articleList, id: \.id) { article in
-                            NavigationLink(
-                                destination: ArticleDetailView(viewModel: .init(article: article))
-                            ) {
-                                ArticleCellView(article: article)
-                            }
-                        }
-                    }
+                
+                List(articleList, id: \.id) { article in
+                    ArticleCellView(article: article)
+                        .listRowSeparator(.hidden)
                 }
+                .listStyle(.plain)
             }
         }
         .withCustomNavBar(title: viewModel.viewConstants.navTitle)
