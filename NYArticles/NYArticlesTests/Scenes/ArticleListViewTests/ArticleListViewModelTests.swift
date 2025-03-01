@@ -37,7 +37,7 @@ final class ArticleListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isRequestMade, false)
         viewModel.perform(action: .didAppear)
         XCTAssertEqual(viewModel.isRequestMade, true)
-        XCTAssertEqual(viewModel.viewState, .failure(.init(error: .noResponse)))
+        XCTAssertEqual(viewModel.viewState, .failure(.init(error: .invalidResponse)))
     }
     
     func testEmptyResponse() throws {

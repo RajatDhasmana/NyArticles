@@ -20,14 +20,6 @@ struct ArticleListRepository: ArticleListRepositoryProtocol {
     }
     
     func fetchArticles() -> AnyPublisher<ArticleListResponse, APIError> {
-        guard let baseURL = URL(string: ConfigurationManager.shared.baseURL) else {
-            return Fail(error: APIError.invalidUrl).eraseToAnyPublisher()
-        }
-        
-        let request = NYRequestBuilder(baseURL: baseURL, path: NYEndpoints.articleList.path)
-        request
-            .set(method: .get)
-            .set(parameters: .url(["api-key": ConfigurationManager.shared.apiKey]))
-        return networkManager.makeRequest(with: request, type: ArticleListResponse.self)
+        return networkManager.makeRequest(with: ArticleListEndpoint.articleList, type: ArticleListResponse.self)
     }
 }

@@ -21,7 +21,7 @@ final class NYRequestBuilder: NYRequestBuilderProtocol {
     }
         
     @discardableResult
-    func set(method: HTTPMethod) -> Self {
+    func set(method: HTTPMethod?) -> Self {
         self.method = method
         return self
     }
@@ -45,7 +45,7 @@ final class NYRequestBuilder: NYRequestBuilderProtocol {
 
     }
     
-    func build() throws -> URLRequest {
+    func build() -> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         var urlRequest = URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 50)
         urlRequest.httpMethod = method?.rawValue

@@ -15,5 +15,5 @@ enum AppConstant: String {
     case unAuthorisedError = "Unauthorised Error"
     case shownError = "Network Failure, Please try again!"
     case emptyDataViewText = "No Data Found!"
-
+    case invalidResponse = "Invalid Response"
 }

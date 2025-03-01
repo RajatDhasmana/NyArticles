@@ -34,7 +34,7 @@ extension ArticleListRepoMocks {
     
     
     static let mockFailure: Self = {
-        let response: AnyPublisher<NYArticles.ArticleListResponse, NYArticles.APIError> = Fail(error: APIError.noResponse)
+        let response: AnyPublisher<NYArticles.ArticleListResponse, NYArticles.APIError> = Fail(error: APIError.invalidResponse)
             .eraseToAnyPublisher()
         return ArticleListRepoMocks(mockResponse: response)
     }()

@@ -9,38 +9,35 @@ import Foundation
 import Combine
 
 protocol NYNetworkManagerProtocol {
-    func makeRequest<T: Decodable>(with builder: NYRequestBuilder, type: T.Type) -> AnyPublisher<T, APIError>
+    func makeRequest<T: Decodable>(with endpoint: NYEndpoints, type: T.Type, decoder: JSONDecoder) -> AnyPublisher<T, APIError>
+}
+
+extension NYNetworkManagerProtocol {
+    func makeRequest<T: Decodable>(with endpoint: NYEndpoints, type: T.Type, decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<T, APIError> {
+        makeRequest(with: endpoint, type: type, decoder: decoder)
+    }
 }
 
 class NYNetworkManager: NYNetworkManagerProtocol {
-    func makeRequest<T: Decodable>(with builder: NYRequestBuilder, type: T.Type) -> AnyPublisher<T, APIError> {
+    func makeRequest<T: Decodable>(with endpoint: NYEndpoints, type: T.Type, decoder: JSONDecoder) -> AnyPublisher<T, APIError> {
         
-        do {
-            let request = try builder.build()
+            let request = endpoint.urlRequest
             
             return URLSession.shared.dataTaskPublisher(for: request)
                 .subscribe(on: DispatchQueue.global(qos: .background))
                 .tryMap { data, response in
-                    guard let httpResponse = response as? HTTPURLResponse,
-                          (200...299).contains(httpResponse.statusCode) else {
-                        throw APIError.unknown(errorStr: "Bad Response Code")
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        throw APIError.invalidResponse
+                    }
+                    
+                    guard (200...299).contains(httpResponse.statusCode) else {
+                        throw APIError.badResponse(statusCode: httpResponse.statusCode)
                     }
                     return data
                 }
-                .decode(type: T.self, decoder: JSONDecoder())
-                .mapError { error in
-                    if error is DecodingError {
-                        return APIError.notAbleToDecode
-                    } else if let error = error as? APIError {
-                        return error
-                    } else {
-                        return APIError.unknown(errorStr: "Unknown error occured")
-                    }
-                }
+                .decode(type: T.self, decoder: decoder)
+                .mapError { error in APIError.decodingError(errorDesc: error.localizedDescription) }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
-        } catch {
-            return Fail(error: APIError.invalidUrl).eraseToAnyPublisher()
-        }
     }
 }

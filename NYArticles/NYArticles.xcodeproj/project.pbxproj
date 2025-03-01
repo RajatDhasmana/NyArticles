@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D691B28B2D739A7200ADEA26 /* ArticleListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B28A2D739A7200ADEA26 /* ArticleListEndpoint.swift */; };
 		D6B00FA32D71AFC800A18B24 /* NYArticlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */; };
 		D6B00FA52D71AFC800A18B24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FA42D71AFC800A18B24 /* ContentView.swift */; };
 		D6B00FA72D71AFCB00A18B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */; };
@@ -27,9 +28,6 @@
 		D6B00FF32D71DB3800A18B24 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF22D71DB3800A18B24 /* EmptyStateViewModel.swift */; };
 		D6B00FF62D71DBAB00A18B24 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF52D71DBAB00A18B24 /* ErrorStateView.swift */; };
 		D6B00FF82D71DBBB00A18B24 /* ErrorStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */; };
-		D6B00FFB2D71DC7E00A18B24 /* DownloadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FFA2D71DC7E00A18B24 /* DownloadImageView.swift */; };
-		D6B00FFD2D71DCAC00A18B24 /* DownloadImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FFC2D71DCAB00A18B24 /* DownloadImageViewModel.swift */; };
-		D6B00FFF2D71DE5A00A18B24 /* DownloadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FFE2D71DE5A00A18B24 /* DownloadImageService.swift */; };
 		D6B010022D71DEC000A18B24 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B010012D71DEC000A18B24 /* CustomNavBar.swift */; };
 		D6B010042D71DF3F00A18B24 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B010032D71DF3F00A18B24 /* View+Extensions.swift */; };
 		D6B0100B2D72476B00A18B24 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B0100A2D72476B00A18B24 /* ConfigurationManager.swift */; };
@@ -63,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D691B28A2D739A7200ADEA26 /* ArticleListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListEndpoint.swift; sourceTree = "<group>"; };
 		D6B00F9F2D71AFC800A18B24 /* NYArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYArticlesApp.swift; sourceTree = "<group>"; };
 		D6B00FA42D71AFC800A18B24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,9 +85,6 @@
 		D6B00FF22D71DB3800A18B24 /* EmptyStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewModel.swift; sourceTree = "<group>"; };
 		D6B00FF52D71DBAB00A18B24 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
 		D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateViewModel.swift; sourceTree = "<group>"; };
-		D6B00FFA2D71DC7E00A18B24 /* DownloadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageView.swift; sourceTree = "<group>"; };
-		D6B00FFC2D71DCAB00A18B24 /* DownloadImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageViewModel.swift; sourceTree = "<group>"; };
-		D6B00FFE2D71DE5A00A18B24 /* DownloadImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageService.swift; sourceTree = "<group>"; };
 		D6B010012D71DEC000A18B24 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6B010032D71DF3F00A18B24 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D6B010082D72463C00A18B24 /* NY-Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NY-Dev.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				D6B010002D71DEB000A18B24 /* CustomNavBar */,
-				D6B00FF92D71DC6800A18B24 /* DownloadImageView */,
 				D6B00FF42D71DB7E00A18B24 /* ErrorStateView */,
 				D6B00FEF2D71DB1300A18B24 /* EmptyStateView */,
 			);
@@ -240,6 +235,7 @@
 				D6B00FDA2D71D94300A18B24 /* ArticleListView.swift */,
 				D6B00FE02D71D9C200A18B24 /* ArticleListViewModel.swift */,
 				D6B010252D73162200A18B24 /* ArticleListRepository.swift */,
+				D691B28A2D739A7200ADEA26 /* ArticleListEndpoint.swift */,
 			);
 			path = ArticleListView;
 			sourceTree = "<group>";
@@ -285,16 +281,6 @@
 				D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */,
 			);
 			path = ErrorStateView;
-			sourceTree = "<group>";
-		};
-		D6B00FF92D71DC6800A18B24 /* DownloadImageView */ = {
-			isa = PBXGroup;
-			children = (
-				D6B00FFA2D71DC7E00A18B24 /* DownloadImageView.swift */,
-				D6B00FFC2D71DCAB00A18B24 /* DownloadImageViewModel.swift */,
-				D6B00FFE2D71DE5A00A18B24 /* DownloadImageService.swift */,
-			);
-			path = DownloadImageView;
 			sourceTree = "<group>";
 		};
 		D6B010002D71DEB000A18B24 /* CustomNavBar */ = {
@@ -486,13 +472,13 @@
 			files = (
 				D6B00FF82D71DBBB00A18B24 /* ErrorStateViewModel.swift in Sources */,
 				D6B010242D7307B400A18B24 /* NYHeaders.swift in Sources */,
-				D6B00FFD2D71DCAC00A18B24 /* DownloadImageViewModel.swift in Sources */,
 				D6B010182D72638500A18B24 /* NYRequestParameters.swift in Sources */,
 				D6B00FEC2D71DAB100A18B24 /* NYEndpoints.swift in Sources */,
 				D6B00FE82D71DA6300A18B24 /* ArticleDetailView.swift in Sources */,
 				D6B00FD22D71B53000A18B24 /* AppDelegate.swift in Sources */,
 				D6B00FDB2D71D94300A18B24 /* ArticleListView.swift in Sources */,
 				D6B00FA52D71AFC800A18B24 /* ContentView.swift in Sources */,
+				D691B28B2D739A7200ADEA26 /* ArticleListEndpoint.swift in Sources */,
 				D6B00FE12D71D9C200A18B24 /* ArticleListViewModel.swift in Sources */,
 				D6B00FE32D71D9ED00A18B24 /* ArticleListResponse.swift in Sources */,
 				D6B0101C2D7263BE00A18B24 /* APIError.swift in Sources */,
@@ -500,7 +486,6 @@
 				D6B0101A2D7263AB00A18B24 /* NYNetworkManager.swift in Sources */,
 				D6B00FA32D71AFC800A18B24 /* NYArticlesApp.swift in Sources */,
 				D6B00FF12D71DB2C00A18B24 /* EmptyStateView.swift in Sources */,
-				D6B00FFB2D71DC7E00A18B24 /* DownloadImageView.swift in Sources */,
 				D6B0101E2D7263E300A18B24 /* NYRequestBuilder.swift in Sources */,
 				D6B010122D72618B00A18B24 /* HTTPMethod.swift in Sources */,
 				D6B010262D73162200A18B24 /* ArticleListRepository.swift in Sources */,
@@ -509,7 +494,6 @@
 				D6B00FF62D71DBAB00A18B24 /* ErrorStateView.swift in Sources */,
 				D6B010022D71DEC000A18B24 /* CustomNavBar.swift in Sources */,
 				D6B0100B2D72476B00A18B24 /* ConfigurationManager.swift in Sources */,
-				D6B00FFF2D71DE5A00A18B24 /* DownloadImageService.swift in Sources */,
 				D6B00FD62D71B5CA00A18B24 /* AppConstants.swift in Sources */,
 				D6B010042D71DF3F00A18B24 /* View+Extensions.swift in Sources */,
 				D6B00FE52D71DA1700A18B24 /* ArticleCellView.swift in Sources */,

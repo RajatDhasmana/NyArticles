@@ -7,56 +7,52 @@
 
 import Foundation
 
-enum APIError: Error, Equatable {
+enum APIError: Error {
     
-    case notAbleToDecode
-    case noResponse
-    case invalidUrl
-    case unAuthorised
-    case unknown(errorStr: String)
+    case url(URLError?)
+    case badResponse(statusCode: Int)
+    case unknown(Error)
+    case decodingError(errorDesc: String)
+    case invalidResponse
     
-    init(statusCode: Int, error: Error) {
-        
-        switch statusCode {
-        case 204:
-            self = .notAbleToDecode
-        case 400:
-            self = .invalidUrl
-        case 401:
-            self = .noResponse
-        case 405:
-            self = .unAuthorised
-        default:
-            self = .unknown(errorStr: error.localizedDescription)
-        }
-    }
-    
-    init(error: Error) {
+    static func convert(error: Error) -> APIError {
         switch error {
             
         case is URLError:
-            self = .invalidUrl
+            return .url(error as? URLError)
+            
+        case is APIError:
+            return error as! APIError
+            
+        case is DecodingError:
+            return .decodingError(errorDesc: error.localizedDescription)
             
         default:
-            self = .unknown(errorStr: error.localizedDescription)
+            return .unknown(error)
         }
     }
-    
-    var errorDescription: String? {
-        switch self {
-        case .notAbleToDecode:
-            return AppConstant.notAbleToDecodeError.rawValue
-        case .noResponse:
-            return AppConstant.noResponseError.rawValue
-        case .invalidUrl:
-            return AppConstant.invalidUrlError.rawValue
-        case .unAuthorised:
-            return AppConstant.unAuthorisedError.rawValue
-        case .unknown(let errorStr):
-            return errorStr
-        }
-    }
-    
+        
     var shownError: String { AppConstant.shownError.rawValue }
+    var errorId: Int {
+        switch self {
+        case .url(let uRLError):
+            return 0
+        case .badResponse(let statusCode):
+            return 1
+        case .unknown(let error):
+            return 2
+        case .decodingError(let errorDesc):
+            return 3
+        case .invalidResponse:
+            return 4
+        }
+    }
+}
+
+extension APIError: Equatable {
+    
+    static func == (lhs: APIError, rhs: APIError) -> Bool {
+        lhs.errorId == rhs.errorId
+    }
 }
 

@@ -42,5 +42,5 @@ struct ErrorStateView: View {
 }
 
 #Preview {
-    ErrorStateView(viewModel: .init(error: .noResponse))
+    ErrorStateView(viewModel: .init(error: .invalidResponse))
 }
