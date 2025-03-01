@@ -1,0 +1,12 @@
+//
+//  NY-Dev.xcconfig
+//  NYArticles
+//
+//  Created by Rajat Dhasmana on 01/03/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = api.nytimes.com/svc/
+API_KEY = 3Am28KAHzQOVryrvPBnndH2YCCUuPk0I
