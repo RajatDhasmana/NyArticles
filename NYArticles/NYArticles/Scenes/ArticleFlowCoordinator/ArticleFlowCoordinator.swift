@@ -39,12 +39,15 @@ struct ArticleFlowCoordinator: View, RootCoordinator {
                 }
         }
     }
+}
+
+extension ArticleFlowCoordinator {
     
     private func resolveArticleListView() -> some View {
         let articleListRepo = ArticleListRepository(networkManager: NYNetworkManager())
         var articleListRouter = ArticleListRouter()
         articleListRouter.moveToArticleDetail = { article in
-            self.push(flowScene: .articleDetail(article: article))
+            navigationStack.append(.articleDetail(article: article))
         }
 
         let articleListVM = ArticleListViewModel(articleListRepo: articleListRepo, router: articleListRouter)
@@ -57,10 +60,5 @@ struct ArticleFlowCoordinator: View, RootCoordinator {
         let view = ArticleDetailView(viewModel: articleDetailVM)
         return view
     }
-}
-
-extension ArticleFlowCoordinator {
-    
-    
 }
 

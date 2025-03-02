@@ -40,11 +40,13 @@ struct ArticleDetailView: View {
 extension ArticleDetailView {
     
     private func topImage(imageUrl: URL?) -> some View {
-        
         AsyncImage(url: imageUrl) { image in
             image
         } placeholder: {
-            ProgressView()
+            
+            Image(systemName: "photo.artframe")
+                .resizable()
+                .scaledToFit()
         }
     }
     

@@ -64,7 +64,6 @@ extension ArticleListResponse {
 }
 
 extension ErrorStateViewModel {
-    
     static let mockInvalidResponse: Self = {
         let vm = ErrorStateViewModel(error: .invalidResponse)
         return vm

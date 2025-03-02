@@ -13,10 +13,7 @@ internal class ArticleListViewModel: ObservableObject {
     // MARK: - Published variables
     @Published var viewState: ViewState = .loading
     @Published var articles: [Article] = []
-    @Published var apiError: APIError? = nil
-    var errorStateVM: ErrorStateViewModel?
     @Published var showErrorAlert: Bool = false
-
     
     // MARK: - Private variables
     private let articleListRepo: ArticleListRepositoryProtocol
@@ -25,7 +22,8 @@ internal class ArticleListViewModel: ObservableObject {
     
     var isRequestMade: Bool = false
     var viewConstants = ViewConstant()
-    
+    var errorStateVM: ErrorStateViewModel?
+
     init(articleListRepo: ArticleListRepositoryProtocol, router: ArticleListRouter? = nil) {
         self.articleListRepo = articleListRepo
         self.router = router

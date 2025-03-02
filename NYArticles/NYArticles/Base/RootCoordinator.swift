@@ -17,7 +17,7 @@ extension RootCoordinator {
         navigationStack.append(flowScene)
     }
     
-    mutating func pop(flowScene: FlowScene) {
+    mutating func pop() {
         _ = navigationStack.popLast()
     }
 }

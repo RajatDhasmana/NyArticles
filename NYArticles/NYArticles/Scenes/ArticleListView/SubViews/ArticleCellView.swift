@@ -63,7 +63,6 @@ extension ArticleCellView {
         .frame(width: 40, height: 40)        
     }
     
-    
     private func titleText(text: String) -> some View {
         Text(text)
             .font(.subheadline)
@@ -89,7 +88,6 @@ extension ArticleCellView {
                 .font(.caption)
                 .foregroundColor(.gray)
         }
-
     }
     
     private var rightArrowImage: some View {
