@@ -13,7 +13,7 @@ struct NYArticlesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleFlowCoordinator()
         }
     }
 }

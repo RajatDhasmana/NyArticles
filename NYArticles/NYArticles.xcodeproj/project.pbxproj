@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D691B28B2D739A7200ADEA26 /* ArticleListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B28A2D739A7200ADEA26 /* ArticleListEndpoint.swift */; };
+		D691B2902D73CA0800ADEA26 /* ArticleFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B28F2D73C9FC00ADEA26 /* ArticleFlowCoordinator.swift */; };
+		D691B2922D743F2A00ADEA26 /* ArticleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B2912D743F2300ADEA26 /* ArticleListRouter.swift */; };
+		D691B2952D743FE800ADEA26 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B2942D743FE200ADEA26 /* RootCoordinator.swift */; };
 		D6B00FA32D71AFC800A18B24 /* NYArticlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */; };
-		D6B00FA52D71AFC800A18B24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FA42D71AFC800A18B24 /* ContentView.swift */; };
 		D6B00FA72D71AFCB00A18B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */; };
 		D6B00FAA2D71AFCB00A18B24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B00FA92D71AFCB00A18B24 /* Preview Assets.xcassets */; };
 		D6B00FB42D71AFCC00A18B24 /* NYArticlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FB32D71AFCC00A18B24 /* NYArticlesTests.swift */; };
@@ -62,9 +64,11 @@
 
 /* Begin PBXFileReference section */
 		D691B28A2D739A7200ADEA26 /* ArticleListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListEndpoint.swift; sourceTree = "<group>"; };
+		D691B28F2D73C9FC00ADEA26 /* ArticleFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFlowCoordinator.swift; sourceTree = "<group>"; };
+		D691B2912D743F2300ADEA26 /* ArticleListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRouter.swift; sourceTree = "<group>"; };
+		D691B2942D743FE200ADEA26 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		D6B00F9F2D71AFC800A18B24 /* NYArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYArticlesApp.swift; sourceTree = "<group>"; };
-		D6B00FA42D71AFC800A18B24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6B00FA92D71AFCB00A18B24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D6B00FAF2D71AFCC00A18B24 /* NYArticlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYArticlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D691B2932D743FDB00ADEA26 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D691B2942D743FE200ADEA26 /* RootCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D691B2962D7441F400ADEA26 /* ArticleFlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D691B28F2D73C9FC00ADEA26 /* ArticleFlowCoordinator.swift */,
+			);
+			path = ArticleFlowCoordinator;
+			sourceTree = "<group>";
+		};
 		D6B00F962D71AFC800A18B24 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +170,7 @@
 		D6B00FA12D71AFC800A18B24 /* NYArticles */ = {
 			isa = PBXGroup;
 			children = (
+				D691B2932D743FDB00ADEA26 /* Base */,
 				D6B0100E2D72613800A18B24 /* NetworkManager */,
 				D6B010092D72471A00A18B24 /* Info.plist */,
 				D6B010052D7233F500A18B24 /* Resources */,
@@ -158,7 +179,6 @@
 				D6B00FCD2D71B4E900A18B24 /* Extensions */,
 				D6B00FCC2D71B4DB00A18B24 /* SharedClasses */,
 				D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */,
-				D6B00FA42D71AFC800A18B24 /* ContentView.swift */,
 				D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */,
 				D6B00FA82D71AFCB00A18B24 /* Preview Content */,
 				D6B00FD12D71B53000A18B24 /* AppDelegate.swift */,
@@ -221,6 +241,7 @@
 		D6B00FD02D71B50A00A18B24 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D691B2962D7441F400ADEA26 /* ArticleFlowCoordinator */,
 				D6B00FE62D71DA4B00A18B24 /* ArticleDetailView */,
 				D6B00FD72D71D91800A18B24 /* ArticleListView */,
 			);
@@ -230,6 +251,7 @@
 		D6B00FD72D71D91800A18B24 /* ArticleListView */ = {
 			isa = PBXGroup;
 			children = (
+				D691B2912D743F2300ADEA26 /* ArticleListRouter.swift */,
 				D6B00FD92D71D92C00A18B24 /* SubViews */,
 				D6B00FD82D71D92700A18B24 /* Model */,
 				D6B00FDA2D71D94300A18B24 /* ArticleListView.swift */,
@@ -475,9 +497,9 @@
 				D6B010182D72638500A18B24 /* NYRequestParameters.swift in Sources */,
 				D6B00FEC2D71DAB100A18B24 /* NYEndpoints.swift in Sources */,
 				D6B00FE82D71DA6300A18B24 /* ArticleDetailView.swift in Sources */,
+				D691B2902D73CA0800ADEA26 /* ArticleFlowCoordinator.swift in Sources */,
 				D6B00FD22D71B53000A18B24 /* AppDelegate.swift in Sources */,
 				D6B00FDB2D71D94300A18B24 /* ArticleListView.swift in Sources */,
-				D6B00FA52D71AFC800A18B24 /* ContentView.swift in Sources */,
 				D691B28B2D739A7200ADEA26 /* ArticleListEndpoint.swift in Sources */,
 				D6B00FE12D71D9C200A18B24 /* ArticleListViewModel.swift in Sources */,
 				D6B00FE32D71D9ED00A18B24 /* ArticleListResponse.swift in Sources */,
@@ -491,10 +513,12 @@
 				D6B010262D73162200A18B24 /* ArticleListRepository.swift in Sources */,
 				D6B010202D72650700A18B24 /* NYRequestBuilderProtocol.swift in Sources */,
 				D6B00FF32D71DB3800A18B24 /* EmptyStateViewModel.swift in Sources */,
+				D691B2952D743FE800ADEA26 /* RootCoordinator.swift in Sources */,
 				D6B00FF62D71DBAB00A18B24 /* ErrorStateView.swift in Sources */,
 				D6B010022D71DEC000A18B24 /* CustomNavBar.swift in Sources */,
 				D6B0100B2D72476B00A18B24 /* ConfigurationManager.swift in Sources */,
 				D6B00FD62D71B5CA00A18B24 /* AppConstants.swift in Sources */,
+				D691B2922D743F2A00ADEA26 /* ArticleListRouter.swift in Sources */,
 				D6B010042D71DF3F00A18B24 /* View+Extensions.swift in Sources */,
 				D6B00FE52D71DA1700A18B24 /* ArticleCellView.swift in Sources */,
 			);

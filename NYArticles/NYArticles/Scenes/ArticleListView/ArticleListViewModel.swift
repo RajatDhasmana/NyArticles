@@ -16,11 +16,14 @@ internal class ArticleListViewModel: ObservableObject {
     // MARK: - Private variables
     private let articleListRepo: ArticleListRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
+    private var router: ArticleListRouter
+    
     var isRequestMade: Bool = false
     var viewConstants = ViewConstant()
     
-    init(articleListRepo: ArticleListRepositoryProtocol) {
+    init(articleListRepo: ArticleListRepositoryProtocol, router: ArticleListRouter) {
         self.articleListRepo = articleListRepo
+        self.router = router
     }
 }
 
@@ -35,6 +38,9 @@ extension ArticleListViewModel {
             }
         case .retry:
             getArticleList()
+            
+        case .didTapOnArticle(let article):
+            router.moveToArticleDetail?(article)
         }
     }
     
@@ -76,6 +82,7 @@ extension ArticleListViewModel {
     enum ArticleListViewActions {
         case didAppear
         case retry
+        case didTapOnArticle(_: Article)
     }
     
     struct ViewConstant {

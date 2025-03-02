@@ -29,6 +29,9 @@ struct ArticleListView: View {
                 List(articleList, id: \.id) { article in
                     ArticleCellView(article: article)
                         .listRowSeparator(.hidden)
+                        .onTapGesture {
+                            viewModel.perform(action: .didTapOnArticle(article))
+                        }
                 }
                 .listStyle(.plain)
             }
