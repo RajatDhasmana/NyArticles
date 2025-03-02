@@ -27,7 +27,8 @@ final class ArticleListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.viewState, .loading)
         viewModel.perform(action: .didAppear)
         XCTAssertEqual(viewModel.isRequestMade, true)
-        XCTAssertEqual(viewModel.viewState, .dataReceived(ArticleListResponse.mock.results))
+        XCTAssertEqual(viewModel.viewState, .dataReceived)
+        XCTAssertEqual(viewModel.errorStateVM, nil)
 
     }
     
@@ -37,7 +38,8 @@ final class ArticleListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isRequestMade, false)
         viewModel.perform(action: .didAppear)
         XCTAssertEqual(viewModel.isRequestMade, true)
-        XCTAssertEqual(viewModel.viewState, .failure(.init(error: .invalidResponse)))
+        XCTAssertEqual(viewModel.viewState, .failure)
+        XCTAssertEqual(viewModel.errorStateVM, ErrorStateViewModel.mockInvalidResponse)
     }
     
     func testEmptyResponse() throws {
@@ -46,7 +48,8 @@ final class ArticleListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.isRequestMade, false)
         viewModel.perform(action: .didAppear)
         XCTAssertEqual(viewModel.isRequestMade, true)
-        XCTAssertEqual(viewModel.viewState, .emptyData(.init(
-            emptyStateText: AppConstant.emptyDataViewText.rawValue)))
+        XCTAssertEqual(viewModel.viewState, .dataReceived)
+        XCTAssertEqual(viewModel.articles, ArticleListResponse.mockEmpty.results)
+        XCTAssertEqual(viewModel.errorStateVM, nil)
     }
 }

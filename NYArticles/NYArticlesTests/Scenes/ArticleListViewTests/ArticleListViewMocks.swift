@@ -62,3 +62,11 @@ extension ArticleListResponse {
         return ArticleListResponse(status: "OK", copyright: "Copyright", numResults: 0, results: [])
     }()
 }
+
+extension ErrorStateViewModel {
+    
+    static let mockInvalidResponse: Self = {
+        let vm = ErrorStateViewModel(error: .invalidResponse)
+        return vm
+    }()
+}

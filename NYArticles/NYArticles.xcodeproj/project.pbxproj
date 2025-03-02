@@ -11,6 +11,7 @@
 		D691B2902D73CA0800ADEA26 /* ArticleFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B28F2D73C9FC00ADEA26 /* ArticleFlowCoordinator.swift */; };
 		D691B2922D743F2A00ADEA26 /* ArticleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B2912D743F2300ADEA26 /* ArticleListRouter.swift */; };
 		D691B2952D743FE800ADEA26 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B2942D743FE200ADEA26 /* RootCoordinator.swift */; };
+		D691B29B2D747F9900ADEA26 /* NYErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D691B29A2D747F9900ADEA26 /* NYErrorAlertModifier.swift */; };
 		D6B00FA32D71AFC800A18B24 /* NYArticlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */; };
 		D6B00FA72D71AFCB00A18B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */; };
 		D6B00FAA2D71AFCB00A18B24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B00FA92D71AFCB00A18B24 /* Preview Assets.xcassets */; };
@@ -26,10 +27,6 @@
 		D6B00FE82D71DA6300A18B24 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FE72D71DA6300A18B24 /* ArticleDetailView.swift */; };
 		D6B00FEA2D71DA7400A18B24 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FE92D71DA7400A18B24 /* ArticleDetailViewModel.swift */; };
 		D6B00FEC2D71DAB100A18B24 /* NYEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FEB2D71DAB100A18B24 /* NYEndpoints.swift */; };
-		D6B00FF12D71DB2C00A18B24 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF02D71DB2C00A18B24 /* EmptyStateView.swift */; };
-		D6B00FF32D71DB3800A18B24 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF22D71DB3800A18B24 /* EmptyStateViewModel.swift */; };
-		D6B00FF62D71DBAB00A18B24 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF52D71DBAB00A18B24 /* ErrorStateView.swift */; };
-		D6B00FF82D71DBBB00A18B24 /* ErrorStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */; };
 		D6B010022D71DEC000A18B24 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B010012D71DEC000A18B24 /* CustomNavBar.swift */; };
 		D6B010042D71DF3F00A18B24 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B010032D71DF3F00A18B24 /* View+Extensions.swift */; };
 		D6B0100B2D72476B00A18B24 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B0100A2D72476B00A18B24 /* ConfigurationManager.swift */; };
@@ -67,6 +64,7 @@
 		D691B28F2D73C9FC00ADEA26 /* ArticleFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFlowCoordinator.swift; sourceTree = "<group>"; };
 		D691B2912D743F2300ADEA26 /* ArticleListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRouter.swift; sourceTree = "<group>"; };
 		D691B2942D743FE200ADEA26 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		D691B29A2D747F9900ADEA26 /* NYErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYErrorAlertModifier.swift; sourceTree = "<group>"; };
 		D6B00F9F2D71AFC800A18B24 /* NYArticles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYArticles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B00FA22D71AFC800A18B24 /* NYArticlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYArticlesApp.swift; sourceTree = "<group>"; };
 		D6B00FA62D71AFCB00A18B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,10 +83,6 @@
 		D6B00FE72D71DA6300A18B24 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		D6B00FE92D71DA7400A18B24 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		D6B00FEB2D71DAB100A18B24 /* NYEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYEndpoints.swift; sourceTree = "<group>"; };
-		D6B00FF02D71DB2C00A18B24 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
-		D6B00FF22D71DB3800A18B24 /* EmptyStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewModel.swift; sourceTree = "<group>"; };
-		D6B00FF52D71DBAB00A18B24 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
-		D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateViewModel.swift; sourceTree = "<group>"; };
 		D6B010012D71DEC000A18B24 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6B010032D71DF3F00A18B24 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D6B010082D72463C00A18B24 /* NY-Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NY-Dev.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +141,22 @@
 			path = ArticleFlowCoordinator;
 			sourceTree = "<group>";
 		};
+		D691B2982D747F6C00ADEA26 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D691B2992D747F7200ADEA26 /* NYAlertModifier */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		D691B2992D747F7200ADEA26 /* NYAlertModifier */ = {
+			isa = PBXGroup;
+			children = (
+				D691B29A2D747F9900ADEA26 /* NYErrorAlertModifier.swift */,
+			);
+			path = NYAlertModifier;
+			sourceTree = "<group>";
+		};
 		D6B00F962D71AFC800A18B24 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		D6B00FA12D71AFC800A18B24 /* NYArticles */ = {
 			isa = PBXGroup;
 			children = (
+				D691B2982D747F6C00ADEA26 /* Modifiers */,
 				D691B2932D743FDB00ADEA26 /* Base */,
 				D6B0100E2D72613800A18B24 /* NetworkManager */,
 				D6B010092D72471A00A18B24 /* Info.plist */,
@@ -232,8 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				D6B010002D71DEB000A18B24 /* CustomNavBar */,
-				D6B00FF42D71DB7E00A18B24 /* ErrorStateView */,
-				D6B00FEF2D71DB1300A18B24 /* EmptyStateView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -285,24 +294,6 @@
 				D6B00FE92D71DA7400A18B24 /* ArticleDetailViewModel.swift */,
 			);
 			path = ArticleDetailView;
-			sourceTree = "<group>";
-		};
-		D6B00FEF2D71DB1300A18B24 /* EmptyStateView */ = {
-			isa = PBXGroup;
-			children = (
-				D6B00FF02D71DB2C00A18B24 /* EmptyStateView.swift */,
-				D6B00FF22D71DB3800A18B24 /* EmptyStateViewModel.swift */,
-			);
-			path = EmptyStateView;
-			sourceTree = "<group>";
-		};
-		D6B00FF42D71DB7E00A18B24 /* ErrorStateView */ = {
-			isa = PBXGroup;
-			children = (
-				D6B00FF52D71DBAB00A18B24 /* ErrorStateView.swift */,
-				D6B00FF72D71DBBB00A18B24 /* ErrorStateViewModel.swift */,
-			);
-			path = ErrorStateView;
 			sourceTree = "<group>";
 		};
 		D6B010002D71DEB000A18B24 /* CustomNavBar */ = {
@@ -492,10 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6B00FF82D71DBBB00A18B24 /* ErrorStateViewModel.swift in Sources */,
 				D6B010242D7307B400A18B24 /* NYHeaders.swift in Sources */,
 				D6B010182D72638500A18B24 /* NYRequestParameters.swift in Sources */,
 				D6B00FEC2D71DAB100A18B24 /* NYEndpoints.swift in Sources */,
+				D691B29B2D747F9900ADEA26 /* NYErrorAlertModifier.swift in Sources */,
 				D6B00FE82D71DA6300A18B24 /* ArticleDetailView.swift in Sources */,
 				D691B2902D73CA0800ADEA26 /* ArticleFlowCoordinator.swift in Sources */,
 				D6B00FD22D71B53000A18B24 /* AppDelegate.swift in Sources */,
@@ -507,14 +498,11 @@
 				D6B00FEA2D71DA7400A18B24 /* ArticleDetailViewModel.swift in Sources */,
 				D6B0101A2D7263AB00A18B24 /* NYNetworkManager.swift in Sources */,
 				D6B00FA32D71AFC800A18B24 /* NYArticlesApp.swift in Sources */,
-				D6B00FF12D71DB2C00A18B24 /* EmptyStateView.swift in Sources */,
 				D6B0101E2D7263E300A18B24 /* NYRequestBuilder.swift in Sources */,
 				D6B010122D72618B00A18B24 /* HTTPMethod.swift in Sources */,
 				D6B010262D73162200A18B24 /* ArticleListRepository.swift in Sources */,
 				D6B010202D72650700A18B24 /* NYRequestBuilderProtocol.swift in Sources */,
-				D6B00FF32D71DB3800A18B24 /* EmptyStateViewModel.swift in Sources */,
 				D691B2952D743FE800ADEA26 /* RootCoordinator.swift in Sources */,
-				D6B00FF62D71DBAB00A18B24 /* ErrorStateView.swift in Sources */,
 				D6B010022D71DEC000A18B24 /* CustomNavBar.swift in Sources */,
 				D6B0100B2D72476B00A18B24 /* ConfigurationManager.swift in Sources */,
 				D6B00FD62D71B5CA00A18B24 /* AppConstants.swift in Sources */,

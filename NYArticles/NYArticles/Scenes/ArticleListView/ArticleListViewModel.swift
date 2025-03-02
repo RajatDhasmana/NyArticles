@@ -12,16 +12,21 @@ internal class ArticleListViewModel: ObservableObject {
     
     // MARK: - Published variables
     @Published var viewState: ViewState = .loading
+    @Published var articles: [Article] = []
+    @Published var apiError: APIError? = nil
+    var errorStateVM: ErrorStateViewModel?
+    @Published var showErrorAlert: Bool = false
+
     
     // MARK: - Private variables
     private let articleListRepo: ArticleListRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
-    private var router: ArticleListRouter
+    private var router: ArticleListRouter?
     
     var isRequestMade: Bool = false
     var viewConstants = ViewConstant()
     
-    init(articleListRepo: ArticleListRepositoryProtocol, router: ArticleListRouter) {
+    init(articleListRepo: ArticleListRepositoryProtocol, router: ArticleListRouter? = nil) {
         self.articleListRepo = articleListRepo
         self.router = router
     }
@@ -37,10 +42,12 @@ extension ArticleListViewModel {
                 isRequestMade = true
             }
         case .retry:
+            errorStateVM = nil
+            showErrorAlert = false
             getArticleList()
             
         case .didTapOnArticle(let article):
-            router.moveToArticleDetail?(article)
+            router?.moveToArticleDetail?(article)
         }
     }
     
@@ -55,28 +62,23 @@ extension ArticleListViewModel {
                     let errorStateViewModel = ErrorStateViewModel(error: error) {
                         self?.perform(action: .retry)
                     }
-                    self?.viewState = .failure(errorStateViewModel)
+                    self?.viewState = .failure
+                    self?.errorStateVM = errorStateViewModel
+                    self?.showErrorAlert = true
                 }
             } receiveValue: { [weak self] articleResponse in
-                if articleResponse.results.isEmpty {
-                    let emptyStateViewModel = EmptyStateViewModel(emptyStateText: AppConstant.emptyDataViewText.rawValue) {
-                        self?.perform(action: .retry)
-                    }
-                    self?.viewState = .emptyData(emptyStateViewModel)
-                } else {
-                    self?.viewState = .dataReceived(articleResponse.results)
-                }
+                self?.articles = articleResponse.results
+                self?.viewState = .dataReceived
             }
             .store(in: &cancellables)
     }
 }
 
 extension ArticleListViewModel {
-    enum ViewState: Equatable {
+    enum ViewState {
         case loading
-        case failure(ErrorStateViewModel)
-        case dataReceived([Article])
-        case emptyData(EmptyStateViewModel)
+        case failure
+        case dataReceived
     }
     
     enum ArticleListViewActions {

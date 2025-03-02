@@ -13,37 +13,29 @@ struct ArticleListView: View {
 
     var body: some View {
         
-        Group {
-            switch viewModel.viewState {
-            case .loading:
-                ProgressView()
-                
-            case .failure(let errorStateViewModel):
-                ErrorStateView(viewModel: errorStateViewModel)
-                
-            case .emptyData(let emptyStateViewModel):
-                EmptyStateView(viewModel: emptyStateViewModel)
-                
-            case .dataReceived(let articleList):
-                
-                List(articleList, id: \.id) { article in
-                    ArticleCellView(article: article)
-                        .listRowSeparator(.hidden)
-                        .onTapGesture {
-                            viewModel.perform(action: .didTapOnArticle(article))
-                        }
+        List(viewModel.articles, id: \.id) { article in
+            ArticleCellView(article: article)
+                .listRowSeparator(.hidden)
+                .onTapGesture {
+                    viewModel.perform(action: .didTapOnArticle(article))
                 }
-                .listStyle(.plain)
-            }
         }
+        .listStyle(.plain)
+        .overlay(content: {
+            if viewModel.viewState == .loading {
+                ProgressView()
+            }
+        })
         .withCustomNavBar(title: viewModel.viewConstants.navTitle)
         .onAppear(perform: {
             viewModel.perform(action: .didAppear)
         })
         .navigationBarBackButtonHidden(true)
+        .showErrorAlert(isPresented: $viewModel.showErrorAlert, errorStateVM: viewModel.errorStateVM)
     }
 }
 
 #Preview {
     ArticleCellView(article: Article(url: "", id: 0, publishedDate: "", byline: "", title: "", abstract: "", media: []))
 }
+
