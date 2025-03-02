@@ -20,10 +20,7 @@ enum APIError: Error {
             
         case is URLError:
             return .url(error as? URLError)
-            
-        case is APIError:
-            return error as! APIError
-            
+                        
         case is DecodingError:
             return .decodingError(errorDesc: error.localizedDescription)
             
@@ -35,13 +32,13 @@ enum APIError: Error {
     var shownError: String { AppConstant.shownError.rawValue }
     var errorId: Int {
         switch self {
-        case .url(let uRLError):
+        case .url:
             return 0
-        case .badResponse(let statusCode):
+        case .badResponse:
             return 1
-        case .unknown(let error):
+        case .unknown:
             return 2
-        case .decodingError(let errorDesc):
+        case .decodingError:
             return 3
         case .invalidResponse:
             return 4
