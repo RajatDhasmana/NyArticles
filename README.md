@@ -40,14 +40,6 @@ The **MVVM** pattern is split into three main components:
 
 - **ViewModel**: The intermediary between the `Model` and the `View`. It contains presentation logic and transforms the model data to a format that the view can display.
 
-```plaintext
-
-┌────────────┐       ┌──────────────┐       ┌───────────┐
-│   Model    │──────▶│  ViewModel   │──────▶│   View    │
-└────────────┘       └──────────────┘       └───────────┘
-
-```
-
 
 ## Project Structure
 The project is organized in the following way:
